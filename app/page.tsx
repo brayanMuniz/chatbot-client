@@ -1,3 +1,6 @@
+import { SidebarButton } from "@/components/Sidebar/SidebarButton";
+import { IconFileExport, IconSettings } from "@tabler/icons-react";
+
 export default function Home() {
   return (
     <main className="">
@@ -18,10 +21,10 @@ export default function Home() {
             <div>Anki Generation</div>
           </div>
 
-          <div>
-            <div>Export</div>
-            <div>Account</div>
-            <div>Open AI Key</div>
+          <div className="flex flex-col items-center space-y-1 border-t pt-1 text-sm">
+            <SidebarButton text="Export Data" icon={<IconFileExport size={18} />} />
+            <SidebarButton text="Account" icon={<IconSettings size={18} />} />
+            <SidebarButton text="Open AI Key" icon={<IconSettings size={18} />} />
           </div>
         </div>
       </div>
