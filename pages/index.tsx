@@ -1,7 +1,12 @@
+import React, { useEffect } from "react";
 import { SidebarButton } from "@/components/Sidebar/SidebarButton";
 import { IconFileExport, IconSettings } from "@tabler/icons-react";
 
 export default function Home() {
+  useEffect(() => {
+    console.log("Hello");
+  }, []);
+
   return (
     <main className="">
       <div className="flex h-screen dark:bg-[#343541]">
