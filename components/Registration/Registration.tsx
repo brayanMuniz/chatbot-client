@@ -1,4 +1,5 @@
 import { useState } from "react";
+import { IconSquareArrowRight } from "@tabler/icons-react";
 
 export default function Registration() {
   const [apiKey, setApiKey] = useState<string | null>(null);
@@ -39,11 +40,13 @@ export default function Registration() {
             Welcome
           </h1>
           <p className="mt-5 text-xl text-zinc-200 sm:text-center sm:text-2xl max-w-2xl m-auto">
-            This is used for learning Japanese. We just need to learn more about you!
+            This website is used for learning Japanese. We just need to learn more
+            about you! Not associated with OpenAI or Wanikani.
           </p>
-          <div className="mt-12 space-y-4 sm:mt-16 sm:space-y-0 sm:grid sm:grid-cols-2 sm:gap-6 lg:max-w-4xl lg:mx-auto xl:max-w-none xl:mx-0 xl:grid-cols-4">
+
+          <div className="mt-12 space-y-4 flex ">
             {levelOptions.map((level) => (
-              <div key={level}>
+              <div key={level} className="w-1/5">
                 <div className="p-6">
                   <h2 className="text-2xl leading-6 font-semibold text-white">
                     {level}
@@ -52,8 +55,10 @@ export default function Registration() {
               </div>
             ))}
           </div>
-          <div className="mt-12 space-y-4 sm:mt-16 sm:space-y-0 sm:grid sm:grid-cols-2 sm:gap-6 lg:max-w-4xl lg:mx-auto xl:max-w-none xl:mx-0 xl:grid-cols-4">
-            <label className="text-2xl leading-6 font-semibold text-white">
+
+          <div className="mt-12 space-y-4 flex">
+            {/* wanikani level */}
+            <label className="text-2xl leading-6 font-semibold text-white mx-6">
               What is your WaniKani level?
               <input
                 type="number"
@@ -62,7 +67,8 @@ export default function Registration() {
                 className="mt-2 block w-full rounded-md py-2 text-sm font-semibold text-black text-center"
               />
             </label>
-            <label className="text-2xl leading-6 font-semibold text-white">
+            {/* apiKey */}
+            <label className="text-2xl leading-6 font-semibold text-white mx-6">
               Please provide your OpenAI API Key:
               <input
                 type="text"
@@ -73,18 +79,15 @@ export default function Registration() {
               <p className="mt-2 text-zinc-300">We won't save your API key.</p>
             </label>
           </div>
-          <div className="flex justify-end mt-6 pr-4">
+
+          {/* ready button */}
+          <div className="flex justify-end mt-6">
             <button
               className="inline-flex items-center px-4 py-2 border border-transparent text-sm font-medium rounded-md text-white bg-pink-600 hover:bg-pink-700 focus:outline-none"
               onClick={handleSubmit}
             >
               Ready
-              <svg
-                className="ml-2 -mr-0.5 h-4 w-4"
-                xmlns="http://www.w3.org/2000/svg"
-                viewBox="0 0 20 20"
-                fill="currentColor"
-              ></svg>
+              <IconSquareArrowRight size={22} />
             </button>
           </div>
         </div>

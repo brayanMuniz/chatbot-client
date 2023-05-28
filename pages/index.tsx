@@ -21,6 +21,8 @@ export default function Home() {
     )
       setRegistered(true);
 
+    // using this to reset the local storage
+
     console.log(storageData);
   }, []);
 
